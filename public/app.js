@@ -307,17 +307,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadinganimation() {
     gsap.from("#page1 h1",{
-        y:30,
+        x:-180,
         duration:0.7,
         delay:0.5,
         opacity:0,
         stagger:0.3,
         transformOrigin: "0% 50% -50",
         ease: "back",
-        stagger: 0.3
+        stagger: 0.6,
+        yoyo:1
     })
     gsap.from("#page1 p",{
-        y:20,
+        x:-120,
         duration:0.8,
         delay:0.9,
         opacity:0
@@ -327,7 +328,7 @@ function loadinganimation() {
         duration:0.4,
         x:0,
         y:0,
-        delay:0.7,
+        delay:1.4,
         opacity:0
     })
     gsap.from(".hero-button",{
@@ -380,8 +381,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function initScrollReveal() {
+function initScrollReveal2() {
     const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.01,
+    });
+
+    reveals.forEach(element => {
+        observer.observe(element);
+    });
+}
+document.addEventListener('DOMContentLoaded', initScrollReveal2);
+
+function initScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal2');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

@@ -8,17 +8,20 @@
     background-color: #FF3C0A;
     cursor: url('sources/navigation.png'), auto;
 }
-
+body {
+    background-color: black;
+}
 
 #navbar{
     position: sticky;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    margin-top: 1vh;
+    margin-top: 0.15vh;
+    margin-bottom: 0.15vh;
     border-radius: 5vw;
     display: flex;
-    height: 10vh;
+    height: 12vh;
     justify-content: space-between;
-    background-color: whitesmoke;
+    background-color: black;
     align-items: center;
     width: 90vw;
     left: 5vw;
@@ -107,6 +110,7 @@
     position: relative;
     padding-top: 16vh;
     display: flex;
+    background-color: black;
 }
 
 
@@ -246,6 +250,7 @@
     word-spacing: 0.35rem;
     font-size: 1.21vw;
     font-family: "Space Grotesk";
+    color: white;
 }
 .about-content p span {
     color: #FF3C0A;
@@ -405,7 +410,7 @@
 } */
 #card-container {
     height: 75vh;
-    background-color: whitesmoke;
+    background-color: black;
     margin-top: 10vh;
     display: flex;
     justify-content: space-evenly;
@@ -414,7 +419,7 @@
 .card {
     height: 90%;
     width: 30%;
-    background-color: white;
+    background-color: black;
     border-radius: 14%;
     display: flex;
     flex-direction: column;
@@ -502,6 +507,7 @@
     max-width: 70vw;
     margin-left: 3vw;
     font-family: "Space Grotesk";
+    color: white;
 }
 .socials svg {
     width: 40px;
@@ -563,6 +569,16 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+.reveal2 {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal2.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Responsiveness */
