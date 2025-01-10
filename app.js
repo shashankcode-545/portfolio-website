@@ -1,3 +1,5 @@
+import { ProgressBar } from "./progressBar.js";
+
 const scroll = new LocomotiveScroll({
     el: document.querySelector('#main'),
     smooth: true
@@ -422,3 +424,81 @@ function initScrollReveal() {
     });
 }
 document.addEventListener('DOMContentLoaded', initScrollReveal);
+
+const progressBar1 = new ProgressBar({
+    progress: 30 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 2000 ,
+});
+progressBar1.mount("#cpp");
+const progressBar2 = new ProgressBar({
+    progress: 30 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 1000 ,
+});
+progressBar2.mount("#python");
+// progressBar1.mount("#cpp");
+const progressBar3 = new ProgressBar({
+    progress: 60 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 1000 ,
+});
+progressBar3.mount("#express");
+// progressBar1.mount("#cpp");
+const progressBar4 = new ProgressBar({
+    progress: 70 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 1000 ,
+});
+progressBar4.mount("#node");
+
+const progressBar5 = new ProgressBar({
+    progress: 90 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 1000 ,
+});
+progressBar5.mount("#css");
+const progressBar6 = new ProgressBar({
+    progress: 100 ,
+    height: "8px",
+    backgroundColor: "#f5848c",
+    fillColor: "#ff3c0a",
+    rounded: true,
+    duration: 2000 ,
+});
+progressBar6.mount("#html");
+
+const starContainer = document.createElement('div');
+starContainer.classList.add('stars');
+document.body.appendChild(starContainer);
+
+for (let i = 0; i < 200; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    starContainer.appendChild(star);
+}
+// Wait for the crawl animation to complete
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        // Hide the loader screen and show the main content
+        document.querySelector('.loader-screen').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+    }, 10000); // Matches the total animation time
+});
